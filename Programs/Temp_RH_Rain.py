@@ -37,4 +37,4 @@ def get_weather_info(lat, lon):
         }
     
     except:
-        print("Unable to get information fot the specific point marked")
+        print("Unable to get information for the specific point marked\nMake Sure to Enter the value such that:Latitude :- [-90,90] AND Longitude :- [-180,180]")
