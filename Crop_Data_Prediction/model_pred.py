@@ -18,4 +18,3 @@ def model_func(Temperature,RH,PH,Rain):
 
     return Prediction_final
             
-print(model_func(32,43,2.4,246))
