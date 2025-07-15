@@ -24,7 +24,12 @@ method = st.radio("Choose how you want to provide location:",
 
 lat,lon = 34,46  # Default parameters
 
-if method == "Mark The Location On The Map 🗺️":
+if method == "Manually Type The Coordinates ✏️":
+    with st.expander("Manually Type The Coordinates ✏️", expanded=True):
+        lat = st.number_input("Latitude", min_value=-90.0, max_value=90.0, format="%.2f", value=32.3)
+        lon = st.number_input("Longitude", min_value=-180.0, max_value=180.0, format="%.2f", value=43.5)
+
+elif method == "Mark The Location On The Map 🗺️":
     with st.expander("Mark The Location On The Map 🗺️", expanded=True):
         col1, col2 = st.columns([1, 2])
         with col2:
@@ -43,10 +48,6 @@ if method == "Mark The Location On The Map 🗺️":
             else:
                 st.info("Click on the map to get coordinates.")
 
-elif method == "Manually Type The Coordinates ✏️":
-    with st.expander("Manually Type The Coordinates ✏️", expanded=True):
-        lat = st.number_input("Latitude", min_value=-90.0, max_value=90.0, format="%.2f", value=32.3)
-        lon = st.number_input("Longitude", min_value=-180.0, max_value=180.0, format="%.2f", value=43.5)
 
 # Form
 with st.form("Crop Predict"):          
