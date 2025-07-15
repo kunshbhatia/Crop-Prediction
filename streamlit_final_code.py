@@ -95,6 +95,7 @@ with st.form("Crop Predict"):
                 <div style="font-size: 42px; font-weight: bold; color: #2e7d32; margin-top: 15px;">{Pred_Crop}</div>
             </div>
             """, unsafe_allow_html=True)
+            #Made by Kunsh Bhatia 
             st.markdown("""
                 <div style="background-color: rgba(255, 255, 255, 0.2); 
                     border: 1px solid #ccc; 
@@ -104,13 +105,12 @@ with st.form("Crop Predict"):
                     text-align: center; 
                     font-size: 16px; 
                     color: #333;">
-                    (The prediction is based on environmental factors and with the help of given dataset only. For ground reality, please contact the respective departments of the area 😁)
+                    (The prediction is based on environmental factors and with the help of given dataset only NOT on the basis of location/altitude or type of land . For ground reality, please contact the respective departments of the area 😁)
                 </div>
                 """, unsafe_allow_html=True)
 
             st.write("")
 
-### Integration fo Open AI , which helps us proving the suggestion for the condition. ( If you are reading the code , it's just an idea 😅)
 
             ### Common Q&A
 
@@ -148,3 +148,5 @@ st.markdown("""
         © 2025 Kunsh Bhatia | Built with ❤️ and ☕
     </div>
 """, unsafe_allow_html=True)
+
+#Made by Kunsh Bhatia 

@@ -30,7 +30,7 @@ def get_weather_info(lat, lon):
         RH_list = list(data['properties']['parameter']["RH2M"].values())
         Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
 
-
+        #Made by Kunsh Bhatia 
         return {
             "Average Temperature" : round(sum(Temperature_List)/len(Temperature_List) , 2 ),
             "Average Relative Humidity" : round(sum(RH_list)/len(RH_list),2),
@@ -39,3 +39,5 @@ def get_weather_info(lat, lon):
     
     except:
         print("Unable to get information for the specific point marked\nMake Sure to Enter the value such that:Latitude :- [-90,90] AND Longitude :- [-180,180]")
+
+#Made by Kunsh Bhatia 

@@ -11,3 +11,6 @@ def P_prediction(N,Temp,RH,Ph,Rainfall):
 
     Y_pred = model.predict(scaler.transform([[N,Temp,RH,Ph,Rainfall]]))
     return Y_pred
+
+
+#Made by Kunsh Bhatia 

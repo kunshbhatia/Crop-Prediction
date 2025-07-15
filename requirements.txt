@@ -6,3 +6,5 @@ folium
 streamlit_folium
 streamlit_js_eval
 scikit-learn
+
+#Made by Kunsh Bhatia 

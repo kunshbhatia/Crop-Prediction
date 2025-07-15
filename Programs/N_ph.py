@@ -5,6 +5,7 @@ import requests
 
 def fetch_soil(lat, lon):
     url = (f"https://rest.isric.org/soilgrids/v2.0/properties/query?lon={int(round(lon,0))}&lat={int(round(lat,0))}&property=nitrogen&property=phh2o&depth=0-5cm&value=Q0.5")
+    #Made by Kunsh Bhatia 
     resp = requests.get(url).json()
 
     try:
@@ -39,3 +40,5 @@ def fetch_soil(lat, lon):
 
     except:
         raise "Please Enter the value such that:\nLatitude :- [-90,90] AND Longitude :- [-180,180]"
+
+#Made by Kunsh Bhatia 

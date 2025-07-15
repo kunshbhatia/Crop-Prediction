@@ -11,6 +11,8 @@ def model_func(Temperature,RH,PH,Rain):
     with open("Crop_Data_Prediction/model_dict.pkl","rb") as f:
         list_ = pickle.load(f)
 
+    #Made by Kunsh Bhatia 
+
     Prediction = model.predict(scaler.transform([[Temperature,RH,PH,Rain]]))
     for crop,num in list_.items():
         if num == Prediction:
@@ -18,3 +20,5 @@ def model_func(Temperature,RH,PH,Rain):
 
     return Prediction_final
             
+
+#Made by Kunsh Bhatia 
