@@ -68,12 +68,10 @@ elif method == "Check For Current Location 📌":
             key="get_location"
         )
 
-        if result:
-            lat = result.get("latitude")
-            lon = result.get("longitude")
-            st.success(f"📍 Latitude: {lat:.5f}, Longitude: {lon:.5f}")
-        else:
-            st.warning("🔄 Waiting for permission or unable to detect location.")
+
+        lat = result.get("latitude")
+        lon = result.get("longitude")
+        st.success(f"📍 Latitude: {lat:.5f}, Longitude: {lon:.5f}")
 
 # Form
 with st.form("Crop Predict"):          
