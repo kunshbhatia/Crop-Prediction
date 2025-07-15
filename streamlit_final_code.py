@@ -20,7 +20,7 @@ st.markdown("<h2 style='text-align: center;'> 🌱 Find Best Crop For Sowing Pur
             , unsafe_allow_html=True)
 
 method = st.radio("Choose how you want to provide location:", 
-                  ["Mark The Location On The Map 🗺️","Manually Type The Coordinates ✏️",])
+                  ["Manually Type The Coordinates ✏️","Mark The Location On The Map 🗺️"])
 
 lat,lon = 34,46  # Default parameters
 
