@@ -19,7 +19,7 @@ st.markdown("<h2 style='text-align: center;'> 🌱 Find Best Crop For Sowing Pur
             , unsafe_allow_html=True)
 
 method = st.radio("Choose how you want to provide location:", 
-                  ["Mark The Location On The Map 🗺️","Manually Type The Coordinates ✏️",    "Check For Current Location 📌"])
+                  ["Mark The Location On The Map 🗺️","Manually Type The Coordinates ✏️",])
 
 lat,lon = 34,46  # Default parameters
 
@@ -46,32 +46,6 @@ elif method == "Manually Type The Coordinates ✏️":
     with st.expander("Manually Type The Coordinates ✏️", expanded=True):
         lat = st.number_input("Latitude", min_value=-90.0, max_value=90.0, format="%.2f", value=32.3)
         lon = st.number_input("Longitude", min_value=-180.0, max_value=180.0, format="%.2f", value=43.5)
-
-elif method == "Check For Current Location 📌":
-    st.markdown("Click below to get your location using GPS")
-
-    clicked = st.button("📍 Get My Location")
-
-    if clicked:
-        result = streamlit_js_eval(
-            js_expressions="""
-            new Promise((resolve, reject) => {
-                navigator.geolocation.getCurrentPosition(
-                    pos => resolve({
-                        latitude: pos.coords.latitude,
-                        longitude: pos.coords.longitude
-                    }),
-                    err => resolve(null)
-                );
-            })
-            """,
-            key="get_location"
-        )
-
-
-        lat = result.get("latitude")
-        lon = result.get("longitude")
-        st.success(f"📍 Latitude: {lat:.5f}, Longitude: {lon:.5f}")
 
 # Form
 with st.form("Crop Predict"):          
