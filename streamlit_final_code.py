@@ -12,6 +12,7 @@ from streamlit_js_eval import streamlit_js_eval
 
 st.set_page_config(
     page_title="Soil And Weather Info",
+    page_icon="🌱",
     layout="wide", 
 )
 
