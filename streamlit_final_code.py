@@ -71,10 +71,7 @@ elif method == "Check For Current Location 📌":
         if result:
             lat = result.get("latitude")
             lon = result.get("longitude")
-            if lat and lon:
-                st.success(f"📍 Latitude: {lat:.5f}, Longitude: {lon:.5f}")
-            else:
-                st.warning("⚠️ Location access denied or unavailable.")
+            st.success(f"📍 Latitude: {lat:.5f}, Longitude: {lon:.5f}")
         else:
             st.warning("🔄 Waiting for permission or unable to detect location.")
 
