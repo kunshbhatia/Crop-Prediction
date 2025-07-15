@@ -2,10 +2,10 @@ import pickle
 
 def P_prediction(N,Temp,RH,Ph,Rainfall):
 
-    with open("P_Prediction\P_pred_model.pkl","rb") as f:
+    with open("P_Prediction/P_pred_model.pkl","rb") as f:
         model = pickle.load(f)
 
-    with open("P_Prediction\P_pred_scaler.pkl","rb") as f:
+    with open("P_Prediction/P_pred_scaler.pkl","rb") as f:
         scaler = pickle.load(f)
 
 

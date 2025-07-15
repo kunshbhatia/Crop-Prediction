@@ -23,20 +23,19 @@ def fetch_soil(lat, lon):
                         Ph = list(resp2['properties']['layers'][1]['depths'][0]['values'].values())[0]
                         if (Ph != None) and (Nitrogen != None):
                             return {
-                                "Nitrogen" : Nitrogen,
-                                "Ph" : Ph/10 # Ph was earlier multiplied by 10 while requesting the URL , thus making it back to normal value
+                                "Nitrogen" : Nitrogen/10, 
+                                "Ph" : Ph/10 # Ph was earlier multiplied by 10 (d_factor) while requesting the URL , thus making it back to normal value
                             }
 
                 return {
-                        "Nitrogen" : Nitrogen,
+                        "Nitrogen" : Nitrogen/10,
                         "Ph" : Ph/10 # Ph was earlier multiplied by 10 while requesting the URL , thus making it back to normal value
                     }
             except:
-                print ('Value(s) Not Found\n\nPossible Troubleshoot :-\n'
+                raise ('Value(s) Not Found\n\nPossible Troubleshoot :-\n'
                         '1) Check the coordinates entered\n'
                         '2) The order with which coordinates are entered is correct i.e. latitude, then longitude\n'
                         '3) Land marked is not good for crop production, try another nearby point.')
 
     except:
-        return "Please Enter the value such that:\nLatitude :- [-90,90] AND Longitude :- [-180,180]"
-
+        raise "Please Enter the value such that:\nLatitude :- [-90,90] AND Longitude :- [-180,180]"

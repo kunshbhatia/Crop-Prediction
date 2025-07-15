@@ -30,10 +30,11 @@ def get_weather_info(lat, lon):
         RH_list = list(data['properties']['parameter']["RH2M"].values())
         Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
 
+
         return {
             "Average Temperature" : round(sum(Temperature_List)/len(Temperature_List) , 2 ),
             "Average Relative Humidity" : round(sum(RH_list)/len(RH_list),2),
-            "Average Rain" : round(sum(Rain_list)/len(Rain_list),2)
+            "Average Rain" : round((sum([x*24 for x in Rain_list]) / len(Rain_list)), 2), # To get rain in mm/day from mm/hr
         }
     
     except:
