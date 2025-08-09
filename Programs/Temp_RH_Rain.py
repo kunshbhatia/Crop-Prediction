@@ -10,8 +10,8 @@ def get_weather_info(lat, lon):
 
     try : 
         # Get date range: past 7 days
-        end_date = datetime.now() - timedelta(days=8)
-        start_date = end_date - timedelta(days=242)
+        end_date = datetime.now() - timedelta(days=4)
+        start_date = end_date - timedelta(days=6)
         start_str = start_date.strftime("%Y%m%d")
         end_str = end_date.strftime("%Y%m%d")
 
