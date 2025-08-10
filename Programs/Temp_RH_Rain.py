@@ -11,7 +11,7 @@ def get_weather_info(lat, lon):
     try : 
         # Get date range: past 200 days
         end_date = datetime.now() - timedelta(days=4)
-        start_date = end_date - timedelta(days=100)
+        start_date = end_date - timedelta(days=40)
         start_str = start_date.strftime("%Y%m%d")
         end_str = end_date.strftime("%Y%m%d")
 
@@ -30,7 +30,7 @@ def get_weather_info(lat, lon):
         RH_list = list(data['properties']['parameter']["RH2M"].values())
         Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())\
 
-        rain_mm_per_hr = sum(Rain_list) / 2304
+        rain_mm_per_hr = sum(Rain_list) / 864
         rain_mm_per_day = rain_mm_per_hr * 24  # To get rain in mm/day from mm/hr
 
         #Made by Kunsh Bhatia 
