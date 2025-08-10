@@ -10,10 +10,10 @@ def get_weather_info(lat, lon):
 
     try : 
         # Get date range: past 200 days
-        end_date = datetime.now() # Getting avg of past 1 months 
-        start_date = end_date - timedelta(days= 371)
-        start_str = start_date.strftime("%Y")
-        end_str = end_date.strftime("%Y")
+        end_date = datetime.now() - timedelta(days=4) # Getting avg of past 1 months 
+        start_date = end_date - timedelta(days= 34)
+        start_str = start_date.strftime("%Y%m%d")
+        end_str = end_date.strftime("%Y%m%d")
 
         # Build API request
         url = (
