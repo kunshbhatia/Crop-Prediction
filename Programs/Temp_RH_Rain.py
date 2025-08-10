@@ -28,26 +28,6 @@ def get_weather_info(lat, lon):
         data = response.json()
         Temperature_List = list(data['properties']['parameter']['T2M'].values())
         RH_list = list(data['properties']['parameter']["RH2M"].values())
-
-        # ONLY FOR RAINFALL
-        # Get date range: past 30 days
-        end_date = datetime.now() - timedelta(days=4) # Getting avg of past 1 months 
-        start_date = end_date - timedelta(days= 34)
-        start_str = 2024
-        end_str = 2024
-
-        # Build API request
-        url = (
-            "https://power.larc.nasa.gov/api/temporal/monthly/point"
-            "?parameters=T2M,RH2M,PRECTOTCORR"
-            f"&community=AG&latitude={lat}&longitude={lon}"
-            f"&start={start_str}&end={end_str}&format=JSON"
-        )
-
-        # Request data
-        response = requests.get(url)
-        data = response.json()
-        
         Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
 
         #Made by Kunsh Bhatia 
