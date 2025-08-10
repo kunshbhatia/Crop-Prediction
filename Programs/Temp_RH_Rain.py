@@ -17,7 +17,7 @@ def get_weather_info(lat, lon):
 
         # Build API request
         url = (
-            "https://power.larc.nasa.gov/api/temporal/daily/point"
+            "https://power.larc.nasa.gov/api/temporal/monthly/point"
             "?parameters=T2M,RH2M,PRECTOTCORR"
             f"&community=AG&latitude={lat}&longitude={lon}"
             f"&start={start_str}&end={end_str}&format=JSON"
