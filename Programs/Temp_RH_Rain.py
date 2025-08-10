@@ -10,14 +10,14 @@ def get_weather_info(lat, lon):
 
     try : 
         # Get date range: past 200 days
-        end_date = datetime.now() - timedelta(days=4) # Getting avg of past 2 months 
-        start_date = end_date - timedelta(days= 64)
-        start_str = start_date.strftime("%Y%m%d")
-        end_str = end_date.strftime("%Y%m%d")
+        end_date = datetime.now() - timedelta(days=370) # Getting avg of past 2 months 
+        start_date = end_date - timedelta(days= 732)
+        start_str = start_date.strftime("%Y")
+        end_str = end_date.strftime("%Y")
 
         # Build API request
         url = (
-            "https://power.larc.nasa.gov/api/temporal/daily/point"
+            "https://power.larc.nasa.gov/api/temporal/monthly/point"
             "?parameters=T2M,RH2M,PRECTOTCORR"
             f"&community=AG&latitude={lat}&longitude={lon}"
             f"&start={start_str}&end={end_str}&format=JSON"
