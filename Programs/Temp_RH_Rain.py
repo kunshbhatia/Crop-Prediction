@@ -31,10 +31,10 @@ def get_weather_info(lat, lon):
 
         # ONLY FOR RAINFALL
         # Get date range: past 30 days
-        end_date = 2024 
-        start_date = 2024
-        start_str = start_date.strftime("%Y")
-        end_str = end_date.strftime("%Y")
+        end_date = datetime.now() - timedelta(days=4) # Getting avg of past 1 months 
+        start_date = end_date - timedelta(days= 34)
+        start_str = 2024
+        end_str = 2024
 
         # Build API request
         url = (
