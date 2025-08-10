@@ -28,13 +28,16 @@ def get_weather_info(lat, lon):
         data = response.json()
         Temperature_List = list(data['properties']['parameter']['T2M'].values())
         RH_list = list(data['properties']['parameter']["RH2M"].values())
-        Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
+        Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())\
+
+        rain_mm_per_hr = sum(Rain_list) / len(Rain_list)
+        rain_mm_per_day = rain_mm_per_hr * 24
 
         #Made by Kunsh Bhatia 
         return {
             "Average Temperature" : round(sum(Temperature_List)/len(Temperature_List) , 2 ),
             "Average Relative Humidity" : round(sum(RH_list)/len(RH_list),2),
-            "Average Rain" : round(((sum(Rain_list) / len(Rain_list))*30*3), 2), # To get rain in mm/day from mm/hr
+            "Average Rain" : round(rain_mm_per_day, 2), # To get rain in mm/day from mm/hr
         }
     
     except:
