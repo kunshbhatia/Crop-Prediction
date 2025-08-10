@@ -10,8 +10,8 @@ def get_weather_info(lat, lon):
 
     try : 
         # Get date range: past 200 days
-        end_date = datetime.now() - timedelta(days=4)
-        start_date = end_date - timedelta(days=40)
+        end_date = datetime.now() - timedelta(days=4) # Getting avg of past 3 months 
+        start_date = end_date - timedelta(days= 95)
         start_str = start_date.strftime("%Y%m%d")
         end_str = end_date.strftime("%Y%m%d")
 
@@ -28,16 +28,13 @@ def get_weather_info(lat, lon):
         data = response.json()
         Temperature_List = list(data['properties']['parameter']['T2M'].values())
         RH_list = list(data['properties']['parameter']["RH2M"].values())
-        Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())\
-
-        rain_mm_per_hr = sum(Rain_list) / 864
-        rain_mm_per_day = rain_mm_per_hr * 24  # To get rain in mm/day from mm/hr
+        Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
 
         #Made by Kunsh Bhatia 
         return {
             "Average Temperature" : round(sum(Temperature_List)/len(Temperature_List) , 2 ),
             "Average Relative Humidity" : round(sum(RH_list)/len(RH_list),2),
-            "Average Rain" : round(rain_mm_per_day * 30, 2) # Getting avg of past 2 months 
+            "Average Rain" : round(sum(Rain_list)/len(Rain_list), 2) 
         }
     
     except:
