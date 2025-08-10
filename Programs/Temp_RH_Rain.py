@@ -30,7 +30,7 @@ def get_weather_info(lat, lon):
         RH_list = list(data['properties']['parameter']["RH2M"].values())
         Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())\
 
-        rain_mm_per_hr = sum(Rain_list) / len(Rain_list)
+        rain_mm_per_hr = sum(Rain_list) / 2304
         rain_mm_per_day = rain_mm_per_hr * 24
 
         #Made by Kunsh Bhatia 
