@@ -78,7 +78,7 @@ with st.form("Crop Predict"):
             with col2:
                 info_card("Humidity", RH, "💧", "%")
             with col3:
-                info_card("Rainfall", Rain, "🌧️", "mm")
+                info_card("Rainfall", Rain*10, "🌧️", "mm") # Done to get the data back to original value earlier was scaled to 0.1
 
             col4, col5, col6, col7 = st.columns(4)
             with col4:
