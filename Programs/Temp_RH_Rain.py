@@ -10,17 +10,14 @@ def get_weather_info(lat, lon):
 
     try : 
         # Get date range: past 30 days
-        end_date = datetime.now() - timedelta(days=4) # Getting avg of past 1 months 
-        start_date = end_date - timedelta(days= 154)
-        start_str = start_date.strftime("%Y%m%d")
-        end_str = end_date.strftime("%Y%m%d")
+        year = 2024
 
         # Build API request
         url = (
             "https://power.larc.nasa.gov/api/temporal/daily/point"
             "?parameters=T2M,RH2M,PRECTOTCORR"
             f"&community=AG&latitude={lat}&longitude={lon}"
-            f"&start={start_str}&end={end_str}&format=JSON"
+            f"&start={year}0101&end={year}1231&format=JSON"
         )
 
         # Request data
