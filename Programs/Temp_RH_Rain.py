@@ -9,27 +9,9 @@ import numpy as np
 def get_weather_info(lat, lon):
 
     try : 
-        # Get date range: past 30 days
-        end_date = datetime.now() - timedelta(days=4) # Getting avg of past 1 months 
-        start_date = end_date - timedelta(days= 64)
-        start_str = start_date.strftime("%Y%m%d")
-        end_str = end_date.strftime("%Y%m%d")
-
-        # Build API request
-        url = (
-            "https://power.larc.nasa.gov/api/temporal/daily/point"
-            "?parameters=T2M,RH2M,PRECTOTCORR"
-            f"&community=AG&latitude={lat}&longitude={lon}"
-            f"&start={start_str}&end={end_str}&format=JSON"
-        )
-
-        # Request data
-        response = requests.get(url)
-        data = response.json()
-
-        ### ONLY FOR RAINFALL
-
+        
         year = 2024
+        
         url = (
             "https://power.larc.nasa.gov/api/temporal/daily/point"
             "?parameters=T2M,RH2M,PRECTOTCORR"
