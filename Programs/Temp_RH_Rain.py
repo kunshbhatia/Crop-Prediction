@@ -9,8 +9,9 @@ import numpy as np
 def get_weather_info(lat, lon):
 
     try : 
+
         
-        year = 2024
+        year = datetime.now().year - 1
         
         url = (
             "https://power.larc.nasa.gov/api/temporal/daily/point"
