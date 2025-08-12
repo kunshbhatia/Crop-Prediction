@@ -11,7 +11,7 @@ def get_weather_info(lat, lon):
     try : 
 
         
-        year = 2019,2020,2021,2022,2023,2024
+        year = 2019,2020,2021,2022,2023
         TEMP = []
         RH = []
         RAIN = []
