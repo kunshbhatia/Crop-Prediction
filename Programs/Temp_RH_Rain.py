@@ -26,8 +26,6 @@ def get_weather_info(lat, lon):
         # Request data
         response = requests.get(url)
         data = response.json()
-        Temperature_List = list(data['properties']['parameter']['T2M'].values())
-        RH_list = list(data['properties']['parameter']["RH2M"].values())
 
         ### ONLY FOR RAINFALL
 
@@ -41,6 +39,8 @@ def get_weather_info(lat, lon):
 
         response = requests.get(url)
         data = response.json()
+        Temperature_List = list(data['properties']['parameter']['T2M'].values())
+        RH_list = list(data['properties']['parameter']["RH2M"].values())
         Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
 
         #Made by Kunsh Bhatia 
