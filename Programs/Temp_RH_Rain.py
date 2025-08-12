@@ -27,9 +27,9 @@ def get_weather_info(lat, lon):
 
         #Made by Kunsh Bhatia 
         return {
-            "Average Temperature" : round(sum(TEMP)/len(TEMP) , 2 ),
-            "Average Relative Humidity" : round(sum(RH)/len(RH),2),
-            "Average Rain" : round((sum(RAIN)/60), 2) 
+            "Average Temperature" : round(sum(Temperature_List)/len(Temperature_List) , 2 ),
+            "Average Relative Humidity" : round(sum(RH_list)/len(RH_list),2),
+            "Average Rain" : round((sum(Rain_list)/10), 2) 
         }
     
     except:
