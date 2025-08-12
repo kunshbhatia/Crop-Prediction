@@ -10,28 +10,20 @@ def get_weather_info(lat, lon):
 
     try : 
 
+        year = 2025
         
-        year = 2021,2022,2023,2024
-        TEMP = []
-        RH = []
-        RAIN = []
-        for i in year:
-            url = (
-                "https://power.larc.nasa.gov/api/temporal/daily/point"
-                "?parameters=T2M,RH2M,PRECTOTCORR"
-                f"&community=AG&latitude={lat}&longitude={lon}"
-                f"&start={i}0101&end={i}1231&format=JSON"
-            )
-    
-            response = requests.get(url)
-            data = response.json()
-            Temperature_List = list(data['properties']['parameter']['T2M'].values())
-            RH_list = list(data['properties']['parameter']["RH2M"].values())
-            Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
+        url = (
+            "https://power.larc.nasa.gov/api/temporal/daily/point"
+            "?parameters=T2M,RH2M,PRECTOTCORR"
+            f"&community=AG&latitude={lat}&longitude={lon}"
+            f"&start={year}0101&end={year}1231&format=JSON"
+        )
 
-            TEMP.append(Temperature_List)
-            RH.append(RH_list)
-            RAIN.append(Rain_list)
+        response = requests.get(url)
+        data = response.json()
+        Temperature_List = list(data['properties']['parameter']['T2M'].values())
+        RH_list = list(data['properties']['parameter']["RH2M"].values())
+        Rain_list = list(data['properties']['parameter']['PRECTOTCORR'].values())
 
         #Made by Kunsh Bhatia 
         return {
