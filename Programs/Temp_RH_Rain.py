@@ -11,7 +11,7 @@ def get_weather_info(lat, lon):
     try : 
 
         
-        year = 2019,2020,2021,2022,2023
+        year = 2019,2020,2021,2022,2023,2024
         TEMP = []
         RH = []
         RAIN = []
@@ -20,7 +20,7 @@ def get_weather_info(lat, lon):
                 "https://power.larc.nasa.gov/api/temporal/daily/point"
                 "?parameters=T2M,RH2M,PRECTOTCORR"
                 f"&community=AG&latitude={lat}&longitude={lon}"
-                f"&start={year}0101&end={year}1231&format=JSON"
+                f"&start={i}0101&end={i}1231&format=JSON"
             )
     
             response = requests.get(url)
