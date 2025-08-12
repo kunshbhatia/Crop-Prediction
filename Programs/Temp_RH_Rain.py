@@ -10,7 +10,7 @@ def get_weather_info(lat, lon):
 
     try : 
 
-        year = 2025
+        year = 2024
         
         url = (
             "https://power.larc.nasa.gov/api/temporal/daily/point"
