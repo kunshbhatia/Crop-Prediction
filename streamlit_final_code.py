@@ -122,6 +122,7 @@ with st.form("Crop Predict"):
                     The predictions are for educational and advisory purposes only and should not replace expert agricultural guidance.
 
                     - Data may vary slightly depending on external APIs.
+                    - The Prediction is made using Temperature , Humidity , Rainfall and pH only . NPK values doesn't contribute in predictions made by model . These values are just added for extra infomration 
                     - We do not store or share user location data.
                     - The best crop predicted by the model is based on limited dataset . Hence please refer a professional before taking any action in real conditions.
                 """)
