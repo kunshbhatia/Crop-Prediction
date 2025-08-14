@@ -60,8 +60,8 @@ with st.form("Crop Predict"):
                     ]
             def final_facts():
                 while True:
-                    random.choice(facts)
-                    time.sleep(10)
+                    return random.choice(facts)
+                time.sleep(10)
             with st.spinner(f'Loading . Do your know that :- {final_facts()}'):
                 Temperature, RH, Rain, N, Ph, Phosphorus, Potassium = final_model(lat, lon)
                 Pred_Crop = model_func(Temperature,RH,Ph,Rain)
