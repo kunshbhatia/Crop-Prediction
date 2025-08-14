@@ -61,7 +61,7 @@ with st.form("Crop Predict"):
             ]
 
             while True:
-                selected_fact = random.choice(facts))
+                selected_fact = random.choice(facts)
                 time.sleep(6)
             
             with st.spinner(f'Loading . Do your know that :- {selected_fact}'):
