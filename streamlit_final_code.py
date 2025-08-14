@@ -59,12 +59,12 @@ with st.form("Crop Predict"):
             facts = [
                     "One teaspoon of healthy soil contains over a billion microorganisms. 🦠","Soil stores three times more carbon than the atmosphere. 🌍","Red soil indicates high iron oxide content. 🧱","Rain can carry pollutants and dust from the atmosphere to the ground. 🌧️","It takes around 500 years to form one inch of topsoil. ⏳","Lightning helps convert atmospheric nitrogen into usable forms for plants. ⚡","Clay soil holds water and nutrients better than sandy soil. 🪨","Virga is rain that evaporates before reaching the ground. 🌫️","Extreme weather events are increasing due to climate change. 🌪️","Wind and rain erosion can remove valuable topsoil. 💨","Soil pH affects nutrient availability to plants. 🧪","Healthy soil can retain more water and reduce the risk of drought. 💧","Dark soil usually contains more organic matter. 🌑","Sandy soil drains quickly but holds fewer nutrients. 🏜️","Soil temperature affects seed germination and root growth. 🌡️","Frozen soil can crack pipes and damage plant roots. ❄️","Photosynthesis depends on weather factors like sunlight and temperature. ☀️","Drought can lead to soil compaction and reduced fertility. 🌵","Flooding can wash away topsoil and leach nutrients. 🌊","Organic farming improves soil structure and biodiversity. 🌱"
             ]
-
-            while True:
-                selected_fact = random.choice(facts)
-                time.sleep(6)
+            def final_fact():
+                while True:
+                    print(random.choice(facts))
+                    time.sleep(6)
             
-            with st.spinner(f'Loading . Do your know that :- {selected_fact}'):
+            with st.spinner(f'Loading . Do your know that :- {final_fact()}'):
                 Temperature, RH, Rain, N, Ph, Phosphorus, Potassium = final_model(lat, lon)
                 Pred_Crop = model_func(Temperature,RH,Ph,Rain)
             def info_card(title, value, icon, unit=""):
