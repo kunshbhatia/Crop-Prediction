@@ -1,7 +1,7 @@
 
 ### FROM here , we can get the avergae temperature , Relative Humidity and Rainfall using the
 ### Coordinates of a point.
-
+ 
 import requests
 from datetime import datetime, timedelta
 import numpy as np
