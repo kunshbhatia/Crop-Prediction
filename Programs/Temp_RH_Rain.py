@@ -10,7 +10,7 @@ def get_weather_info(lat, lon):
 
     try : 
 
-        end_date = datetime.now() - timedelta(days=275) # Getting avg of past 3 months 
+        end_date = datetime.now() - timedelta(days=305) # Getting avg of next 3 months with the help of last year 
         start_date = datetime.now() - timedelta(days=365)
         start_str = start_date.strftime("%Y%m%d")
         end_str = end_date.strftime("%Y%m%d")
