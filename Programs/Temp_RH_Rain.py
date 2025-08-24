@@ -31,7 +31,7 @@ def get_weather_info(lat, lon):
 
         ### ONLY FOR RAINFALL
         
-        year =  end_date.strftime("%Y") - 1
+        year =  int(end_date.strftime("%Y")) - 1
         
         url = (
             "https://power.larc.nasa.gov/api/temporal/daily/point"
